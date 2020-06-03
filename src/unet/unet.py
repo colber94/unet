@@ -21,7 +21,7 @@ class ConvBlock(layers.Layer):
         self.dropout_rate=dropout_rate
         self.padding=padding
         self.activation=activation
-	self.normalization = normalization
+	self.normalization=normalization
 
         filters = _get_filter_count(layer_idx, filters_root)
         self.conv2d_1 = layers.Conv2D(filters=filters,
@@ -86,7 +86,7 @@ class UpconvBlock(layers.Layer):
         self.pool_size=pool_size
         self.padding=padding
         self.activation=activation
-	self.normalization = normalization
+	self.normalization=normalization
 
         filters = _get_filter_count(layer_idx + 1, filters_root)
         self.upconv = layers.Conv2DTranspose(filters // 2,
